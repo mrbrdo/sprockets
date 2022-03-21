@@ -184,7 +184,7 @@ module Sprockets
           # digest themselves.
           'integrity'    => DigestUtils.hexdigest_integrity_uri(asset.hexdigest)
         }
-        assets[asset.logical_path] = asset.digest_path
+        assets[asset.logical_path] ||= asset.digest_path
 
         filenames << asset.filename
 
